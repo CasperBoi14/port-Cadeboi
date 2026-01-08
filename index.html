@@ -1,0 +1,158 @@
+e <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casper Adeboi | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="logo">CA:01</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2 data-id="greeting">Portfolio</h2>
+                <h1 data-id="name">Casper Adeboi</h1>
+                <p class="subtitle">Creative developer and student crafting digital experiences for the future.</p>
+                <a href="#about" class="btn-future">Explore</a>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <section id="about" class="about-section hidden-section">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="profile-grid">
+                    <div class="profile-bio">
+                        <p class="bio-text">
+                            I am a 16-year-old student at Lorentz Lyceum, currently in VWO5. 
+                            My passion lies in the intersection of design and technology. 
+                            I don't just write code; I build immersive systems that feel alive.
+                            <br><br>
+                            Constantly learning, constantly evolving. I aim to merge minimalistic aesthetics with complex backend logic to create seamless user experiences.
+                        </p>
+                    </div>
+                    <div class="profile-details">
+                        <ul class="info-list">
+                            <li class="info-item">
+                                <span>Name</span>
+                                <span>Casper Adeboi</span>
+                            </li>
+                            <li class="info-item">
+                                <span>Age</span>
+                                <span>16</span>
+                            </li>
+                            <li class="info-item">
+                                <span>Education</span>
+                                <span>VWO5 @ Lorentz Lyceum</span>
+                            </li>
+                            <li class="info-item">
+                                <span>Focus</span>
+                                <span>Web Development</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section hidden-section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>HTML</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>JavaScript</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 68%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>UX Design</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section hidden-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Sizzle</h3>
+                            <p class="project-tagline">Your partner for delicious recipes for every occasion.</p>
+                            <p class="project-desc">
+                                From quick dinners to sophisticated meals. Whether you're looking for inspiration or need step-by-step help, Sizzle will help you quickly prepare something delicious.
+                                <br><br>
+                                Our mission is to make cooking accessible and inspiring with a large recipe library, smart search and filter options, and personalized recommendations. Sizzle offers plenty of opportunities for both beginners and experienced cooks to discover new flavors.
+                            </p>
+                            <a href="https://sizzledevs.github.io/Sizzle_webapp/about.html" class="btn-text">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section hidden-section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <input type="text" class="input-minimal" placeholder="Name" required>
+                    <input type="email" class="input-minimal" placeholder="Email" required>
+                    <textarea class="input-minimal" rows="1" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn-future">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Casper Adeboi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
