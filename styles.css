@@ -298,10 +298,9 @@ body {
 }
 
 .contact-btn:hover {
-    background: var(--accent);
+    transform: translateY(-5px);
+    background: #1e293b;
     border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
 }
 
 .contact-btn span {
@@ -310,29 +309,181 @@ body {
 
 /* Footer */
 footer {
-    padding: 40px;
+    padding: 30px 40px;
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.05);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: var(--bg-color);
 }
 
-/* Responsive */
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* Responsive / Mobile Optimization */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 4rem; } 
-    .nav-links { display: none; } /* Mobile menu disabled for simplicity/requested clean look */
-    .about-bento-grid { 
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto;
+    /* Global Adjustments */
+    :root {
+        --font-size-base: 16px;
     }
-    .bento-box.wide, .bento-box.tall { grid-column: auto; grid-row: auto; }
-    
+
+    /* Navbar */
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(2, 6, 23, 0.95); /* Slightly more opaque for readability */
+    }
+
+    .nav-links {
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 0 20px;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 120px; /* Space for stacked navbar */
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem; /* Reduced from 8rem */
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero .text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* Projects Section - Restore Slider */
+    .projects-section {
+        padding: 40px 0; /* Full width slider often looks better without side padding on container */
+        overflow: hidden;
+    }
+
+    .container {
+        padding: 0 20px; /* Bring padding back to container for titles */
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
     .projects-slider {
-        padding-right: 40px; /* Show part of next card */
+        display: flex;
+        flex-direction: row; /* Horizontal layout */
+        gap: 20px;
+        overflow-x: auto; /* Enable scrolling */
+        padding: 0 20px 40px 20px; /* Padding for scroll feel */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .project-card {
+        min-width: 85vw; /* Almost full width but shows next card peeking */
+        width: 85vw;
+        height: 450px;
+        scroll-snap-align: center;
+    }
+
+    .project-card:hover {
+        transform: none; 
+    }
+
+    .project-card h3 {
+        font-size: 2rem;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+
+    /* About Section - Bento Grid / Collage Style */
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-bento-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile "collage" look */
+        grid-template-rows: auto; /* Let content dictate height or keep fixed */
+        grid-auto-rows: minmax(150px, auto);
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .bento-box {
+        padding: 20px;
+        min-height: auto; /* Let grid rows handle it */
     }
     
-    .project-card {
-        min-width: 300px; /* Smaller cards on mobile */
-        height: 400px;
+    /* Keep the "collage" spanning logic but adapted for 2 cols */
+    .bento-box.wide {
+        grid-column: span 2; /* Full width on mobile grid */
+    }
+    
+    /* We can make some other boxes span if we want more collage feel, 
+       but keeping 'wide' as full width and others as half width is a good collage balance for mobile. 
+    */
+
+    .bento-box h3 {
+        font-size: 0.8rem;
+    }
+
+    .bento-box p {
+        font-size: 1.1rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 60px 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .contact-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px;
+        font-size: 0.9rem;
     }
 }
+
